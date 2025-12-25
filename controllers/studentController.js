@@ -113,6 +113,7 @@ exports.deleteStudentById =async (req, res
             return res.status(404).json({ message: "student not found" });
         }
         await student.destroy();
+        res.status(200).json({message:"Deleted successfully"})
     } catch (error) {
         res.status(500).json({ message: "cannot delete" });
     }
